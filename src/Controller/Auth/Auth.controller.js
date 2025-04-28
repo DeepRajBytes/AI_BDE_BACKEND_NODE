@@ -5,6 +5,7 @@ const {
 } = require("../../Repository/Auth/Auth.repository");
 
 const signupUser = async (req, res) => {
+  console.log("hhiiiiiiiiii")
   try {
     const reqData = req.body;
     const SignUpResponse = await signup(reqData);

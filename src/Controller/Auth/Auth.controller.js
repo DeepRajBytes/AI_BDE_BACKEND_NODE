@@ -6,6 +6,7 @@ const {
 
 const signupUser = async (req, res) => {
   try {
+    console.log("sasasasasas")
     const reqData = req.body;
     const SignUpResponse = await signup(reqData);
     if (SignUpResponse === 2) {

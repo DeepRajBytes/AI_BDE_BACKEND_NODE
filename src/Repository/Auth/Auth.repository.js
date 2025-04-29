@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { queryResults } = require("../../Connections/Database/mysql");
 const JWT = require("jsonwebtoken");
 const bcrypt = require("bcrypt");

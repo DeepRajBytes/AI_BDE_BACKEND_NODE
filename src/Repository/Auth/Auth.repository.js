@@ -1,4 +1,3 @@
-require("dotenv").config();
 const { queryResults } = require("../../Connections/Database/mysql");
 const JWT = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
@@ -53,7 +52,6 @@ const signin = async (reqData) => {
       return 2;
     } else {
       let jwtSecretKey = process.env.JWT_SECRET_KEY;
-      console.log("jwtSecretKey", jwtSecretKey);
       let data = {
         time: Date(),
         email: grabbedEmail,

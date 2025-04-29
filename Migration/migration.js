@@ -1,13 +1,15 @@
 const mysql = require("mysql2/promise");
 const fs = require("fs").promises;
-
+const path = require("path");
+require("dotenv").config({ path: path.join(__dirname, "../.env") });
 
 async function runMigration() {
   try {
     // 1. Read the SQL file
-
-    const sql = await fs.readFile("tables-creation.sql", "utf8");
-
+    const sql = await fs.readFile(
+      path.join(__dirname, "tables-creation.sql"),
+      "utf8"
+    );
 
     // 2. Connect without specifying DB (we're creating it)
     const connection = await mysql.createConnection({

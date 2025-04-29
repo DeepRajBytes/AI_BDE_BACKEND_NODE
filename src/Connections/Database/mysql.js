@@ -1,6 +1,14 @@
 const mysql = require("mysql2");
 const util = require("util");
 
+console.log(
+  "env",
+  process.env.LOCAL_HOST,
+  process.env.LOCAL_USER,
+  process.env.LOCAL_PASSWORD,
+  process.env.LOCAL_DATABASE
+);
+
 const pool = mysql
   .createPool({
     host: process.env.LOCAL_HOST,

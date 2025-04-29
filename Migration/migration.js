@@ -1,10 +1,13 @@
 const mysql = require("mysql2/promise");
 const fs = require("fs").promises;
 
+
 async function runMigration() {
   try {
     // 1. Read the SQL file
+
     const sql = await fs.readFile("tables-creation.sql", "utf8");
+
 
     // 2. Connect without specifying DB (we're creating it)
     const connection = await mysql.createConnection({

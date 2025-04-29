@@ -10,7 +10,6 @@ async function runMigration() {
       path.join(__dirname, "tables-creation.sql"),
       "utf8"
     );
-  console.log("ENV:", process.env.LOCAL_HOST, process.env.LOCAL_USER, process.env.LOCAL_PASSWORD);
 
     // 2. Connect without specifying DB (we're creating it)
     const connection = await mysql.createConnection({

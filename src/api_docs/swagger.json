@@ -6,9 +6,10 @@
     "description": "Authentication API documentation (Signup, Signin, Verify Token)"
   },
   "servers": [
-    {
-      "url": "http://localhost:3000/api"
-    }
+    { "url": "http://localhost:3000/api" },
+    { "url": "http://192.168.0.118:3001/" },
+    { "url": "http://localhost:3000/api" },
+    { "url": "http://158.220.115.133:3001/api" }
   ],
   "paths": {
     "/signup": {

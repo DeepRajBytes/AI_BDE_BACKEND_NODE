@@ -1,0 +1,22 @@
+<VirtualHost *:80>
+    ServerName 192.168.0.118
+
+    ProxyPreserveHost On
+    ProxyPass / http://localhost:3000/
+    ProxyPassReverse / http://localhost:3000/
+
+    ErrorLog ${APACHE_LOG_DIR}/backend_node_error.log
+    CustomLog ${APACHE_LOG_DIR}/backend_node_access.log combined
+</VirtualHost>
+
+
+
+
+deepraj@deepraj:~/Desktop/DesktopData/Tesnor project/Ai_For_BDE/Backend_Node$ sudo ufw allow 3001
+Rule added
+Rule added (v6)
+deepraj@deepraj:~/Desktop/DesktopData/Tesnor project/Ai_For_BDE/Backend_Node$ sudo ufw reload
+Firewall reloaded
+deepraj@deepraj:~/Desktop/DesktopData/Tesnor project/Ai_For_BDE/Backend_Node$ sudo netstat -tuln | grep 3001
+tcp        0      0 0.0.0.0:3001            0.0.0.0:*               LISTEN     
+deepraj@deepraj:~/Desktop/DesktopData/Tesnor project/Ai_For_BDE/Backend_Node$ 

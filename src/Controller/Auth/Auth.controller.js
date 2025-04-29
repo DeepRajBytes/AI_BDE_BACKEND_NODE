@@ -28,7 +28,7 @@ const signinUser = async (req, res) => {
     const SignUpResponse = await signin(reqData);
     if (SignUpResponse === 2) {
       res
-        .status(200)
+        .status(409)
         .json({ data: "INCORRECT_PASSWORD", status: 409, success: false });
     } else if (SignUpResponse === 1) {
       res
@@ -36,7 +36,7 @@ const signinUser = async (req, res) => {
         .json({ data: "USER_NOT_PRESENT", status: 409, success: false });
     } else {
       res
-        .status(409)
+        .status(200)
         .json({ data: SignUpResponse, status: 200, success: true });
     }
   } catch (error) {
@@ -50,11 +50,11 @@ const verifyToken = async (req, res) => {
     const SignUpResponse = await TokenVerify(email);
     if (SignUpResponse === 1) {
       res
-        .status(200)
+        .status(409)
         .json({ data: "INVALID_USER", status: 409, success: false });
     } else {
       res
-        .status(409)
+        .status(200)
         .json({ data: SignUpResponse, status: 200, success: true });
     }
   } catch (error) {

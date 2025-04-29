@@ -1,6 +1,6 @@
 const mysql = require("mysql2");
 const util = require("util");
-
+require("dotenv").config({ path: path.join(__dirname, "../.env") });
 console.log(
   "env",
   process.env.LOCAL_HOST,
